@@ -1,0 +1,158 @@
+body{
+    background-color: rgba(106, 99, 99, 0.154);
+}
+#form{
+    position:fixed;
+    top:15%;
+    left:28%;
+    width:950px;
+ }
+
+input{
+    height: 70%;
+    width: 70%;
+    min-height:50px;
+    overflow: hidden;
+ }
+
+ ::placeholder {
+    color: rgb(85, 78, 78);
+    opacity: 0.7; 
+}
+
+h1 {
+    text-align: center;
+}
+
+button{
+    min-height:50px;
+}
+
+button:hover {
+    background: #748a7d;
+}
+
+/*botones texto*/
+/*
+#textButton{
+    background:none; 
+    border:none;     
+}
+#textButton:hover{
+    background-color: green;
+}*/
+.link1 {
+    position: fixed;
+    left: 20%;
+    top: 90%;
+  }
+
+.link2 {
+    position: fixed;
+    left: 50%;
+    top: 90%;
+  } 
+
+.link3 {
+    position: fixed;
+    left: 80%;
+    top: 90%;
+  }  
+
+  .column {
+    float: left;
+    width: 25%;
+    
+  }
+  
+  /* Clear floats after the columns */
+  /*.row{
+    top: 500px;
+    background-color: aqua;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+  }*/
+
+/*centramos la clase*/
+
+
+/* Set additional styling options for the columns*/
+/*desde aqui probamos par aaparecer los puntos*/
+.column0 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+    }
+
+.column1 {
+float: left;
+width: 25%;
+
+position: relative;
+top: 150px;
+}
+
+.column2 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+}
+
+.column3 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+}
+
+.column4 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+}
+    
+
+.row{
+
+    flex-flow: column wrap;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+
+
+}
+
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.center {
+    background: #11a90c;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+  }

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgba(136, 93, 93, 0.154);
+    }
+    /*.formulario{
+    position:fixed;
+    top:15%;
+    left:28%;
+    width:950px;
+ }
+
+.formulario.input{
+    height: 70%;
+    width: 70%;
+    min-height:50px;
+    overflow: hidden;
+ }
+
+ ::placeholder {
+    color: rgb(85, 78, 78);
+    opacity: 0.7; 
+}*/
+
+    h1 {
+      text-align: center;
+    }
+    /*
+button{
+    min-height:50px;
+}
+
+button:hover {
+    background: #748a7d;
+}
+
+/*botones texto*/
+    /*
+#textButton{
+    background:none; 
+    border:none;     
+}
+#textButton:hover{
+    background-color: green;
+}*/
+    .link1 {
+      position: fixed;
+      left: 20%;
+      top: 90%;
+    }
+
+    .link2 {
+      position: fixed;
+      left: 50%;
+      top: 90%;
+    }
+
+    .link3 {
+      position: fixed;
+      left: 80%;
+      top: 90%;
+    }
+
+    /*.column {
+    float: left;
+    width: 25%;
+    
+  }*/
+
+    /* Clear floats after the columns */
+    /*.row{
+    top: 500px;
+    background-color: aqua;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+  }*/
+
+    /*centramos la clase*/
+
+    /* Set additional styling options for the columns*/
+    /*desde aqui probamos par aaparecer los puntos*/
+    /*.column0 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+    }
+
+.column1 {
+float: left;
+width: 25%;
+
+position: relative;
+top: 150px;
+}
+
+.column2 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+}
+
+.column3 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+}
+
+.column4 {
+    float: left;
+    width: 25%;
+    
+    position: relative;
+    top: 150px;
+}
+    
+
+/*.row{
+
+    flex-flow: column wrap;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+
+
+}*/
+
+    h2 {
+      text-align: center;
+    }
+    /*
+p {
+    text-align: center;
+}
+
+.center {
+    background: #11a90c;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+  }*/
+  </style>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <h1>VALIDADOR DE CERTIFICADO DIGITAL</h1>
+
+    <!--<form class="formulario" id="form" role="search" action="." method="POST">
+        {% csrf_token %}
+        <input type="file" id="real-file" hidden="hidden" />
+        <input type="search" name="lkbus" id="query" name="q"
+         placeholder="Ingresa URL a verificar"
+         aria-label="Search through site content">
+        <button id="verify">Verificar</button>
+        <button type="button" id="custom-button">Cargar lote</button>
+    </form>-->
+
+    <form id="form" role="search" action="." method="POST">
+      <div class="input-group mb-3">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="lkbus"
+          class="form-control form-control-lg"
+          placeholder="Ingresa el link a buscar"
+        />
+        <button id="verify">Verificar</button>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="file" id="formFile" />
+      </div>
+    </form>
+
+    <div class="container">
+      <div class="row">
+        <div class="col btn btn-primary">Pagina web</div>
+        <div class="col btn btn-success">CHROME</div>
+        <div class="col btn btn-warning">FIREFOX</div>
+        <div class="col btn btn-info">EDGE</div>
+      </div>
+    </div>
+
+    <!--
+    <div class="row">
+
+        <div class="column0">
+            <h2>LISTA DE BUSQUEDAS</h2>
+            <br>
+            <p height="100" width="100">www.unsa.edu.pe</p>
+            <br><br><br>
+            <p height="100" width="100">www.minsa.gob.pe</p>
+            <br><br><br>
+            <p height="100" width="100">www.muniarequipa.gob.pe</p>
+            <br><br><br>
+            <p height="100" width="100">www.google.pe</p>
+        </div>
+        <div class="column1">
+            <h2>MICROSOFT</h2>
+            <div class="rowsub1">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="green" />
+                </svg>
+            </div>
+            <div class="rowsub1_2">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+            <div class="rowsub1_3">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="orange" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+
+            <div class="rowsub1_4">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="green" />
+                </svg>
+            </div>
+            
+            
+           
+        </div>
+        <div class="column2">
+            <h2>CHROME</h2>
+            <div class="rowsub2">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="green" />
+                </svg>
+            </div>
+            <div class="rowsub2_2">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+            <div class="rowsub2_3">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+
+            <div class="rowsub2_4">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="orange" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+        </div>
+        <div class="column3">
+            <h2>MOZILLA</h2>
+            <div class="rowsub3">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+            <div class="rowsub3_2">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="green" />
+                </svg>
+            </div>
+            <div class="rowsub3_3">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+            </div>
+
+            <div class="rowsub3_4">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="white" />
+                </svg>
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="3" fill="green" />
+                </svg>
+            </div>
+        </div>
+    </div>
+-->
+    <!--
+    <div class="row">
+        <div class="column1" style="background-color:#ada7a4;">
+            <h2>Links </h2>
+            <p>www.unsa.edu.pe</p>
+            <p>www.minsa.gob.pe</p>
+            <p>www.muniarequip.gob.pe</p>
+            <p>www.google.pe</p>
+        </div>
+        <div class="column2" style="background-color:#f2f7f6;">
+            <h2>Microsoft Edge</h2>
+            <div class="center"></div>
+            <div class="center"></div>
+            <div class="center"></div>
+            <div class="center"></div>
+        </div>
+        <div class="column3" style="background-color:#a7a09c;">
+            <h2>Google Chrome</h2>
+            <div class="center"></div>
+            <div class="center"></div>
+            <div class="center"></div>
+            <div class="center"></div>
+        </div>
+        <div class="column4" style="background-color:#e9ecec;">
+            <h2>Mozilla Firefox</h2>
+            <div class="center"></div>
+            <div class="center"></div>
+            <div class="center"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+-->
+    <div class="link1">
+      <a href="url">Ver Mozilla Trust Store</a>
+    </div>
+    <div class="link2">
+      <a href="url">Ver Microsoft Trust Store</a>
+    </div>
+    <div class="link3">
+      <a href="url">Ver Google Trust Store</a>
+    </div>
+    <!--
+    <div id="first">This is the FIRST div</div>
+    <div id="second">This is the SECOND div</div>
+    <div id="third">This is the THIRD div</div>
+    <button id="toggle">Hide THIRD div</button>
+    -->
+    <!--  <script>
+        /*var str1 = document.getElementById("query").value;
+        console.log('hola')
+        console.log(str1)*/
+        /*function isURL(str) {
+            var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+            console.log('gaaaaaaaaa');
+            return pattern.test(str);
+        }*/
+
+        /*function ValidURL(str) {
+            var regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+            if(!regex .test(str)) {
+                alert("Please enter valid URL.");
+                return false;
+            } else {
+                return true;
+            }
+        }*/
+
+        /*function isValidURL(string) {
+            var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+            if(res !== null){
+                alert("es valido");
+            }
+            else{
+                alert("pon una buena url");
+            }
+        };
+
+        document.getElementById('verify').onclick = function(){
+
+            if(isValidURL(str1)){
+                alert("es valido");
+            }else{
+                alert("pon una buena url");
+            }
+        };*/
+
+        //var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+        //var regex = new RegExp(expression);
+        //var t = 'www.google.com';
+
+        //para validar URL
+        document.getElementById('verify').onclick = function(){
+            var str1 = document.getElementById("query").value;
+            console.log('hola')
+            console.log(str1)
+            var httpRegex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+            // Validate URL
+            
+            if(httpRegex.test(str1)){
+                alert("aceptado");
+                console.log(str1);
+            } // Returns true
+            else{
+                alert("fallo");
+                console.log(str1);
+            }
+            httpRegex.test(str1); 
+        }
+
+        //codigo para subir en lote
+        const customBtn = document.getElementById("custom-button");
+        const realFileBtn = document.getElementById("real-file");
+        customBtn.addEventListener("click", function() {
+            realFileBtn.click()
+        });
+    </script>
+    -->
+    <!--
+    <script>
+        const targetDiv = document.getElementById("third");
+        const btn = document.getElementById("toggle");
+        btn.onclick = function () {
+        if (targetDiv.style.display !== "none") {
+            targetDiv.style.display = "none";
+        } else {
+            targetDiv.style.display = "block";
+        }
+        };
+    </script>
+-->
+  </body>
+</html>
